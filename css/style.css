@@ -1,0 +1,951 @@
+@import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+    font-family: Telegrafico;
+    /* Имя шрифта */
+    src: url(../fonts/telegrafico.ttf);
+    /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: TerminalDosis;
+    /* Имя шрифта */
+    src: url(../fonts/TerminalDosis-Book.ttf);
+    /* Путь к файлу со шрифтом */
+}
+
+*,
+ ::after,
+ ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    display: grid;
+    /* grid-template-rows: 80px 70px 66px 427px 1fr 1fr; */
+    grid-template-rows: repeat(6, max-content);
+    /* grid-auto-rows: 100px; */
+    /* grid-template-columns: repeat(3, 1fr 940px 1fr); */
+    place-items: center;
+    /* place-content: stretch; */
+    grid-template-areas: "header header header" "navBar navBar navBar" "infoSearch infoSearch infoSearch" ". baner ." ". main ." "footer footer footer";
+}
+
+header,
+.navBar,
+.infoSearch {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 940px;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    grid-area: header;
+    background-image: -moz-linear-gradient( 90deg, rgb(244, 70, 32) 0%, rgb(248, 84, 43) 44%, rgb(252, 98, 54) 70%, rgb(251, 94, 49) 81%, rgb(250, 89, 43) 97%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(244, 70, 32) 0%, rgb(248, 84, 43) 44%, rgb(252, 98, 54) 70%, rgb(251, 94, 49) 81%, rgb(250, 89, 43) 97%);
+    background-image: -ms-linear-gradient( 90deg, rgb(244, 70, 32) 0%, rgb(248, 84, 43) 44%, rgb(252, 98, 54) 70%, rgb(251, 94, 49) 81%, rgb(250, 89, 43) 97%);
+    box-shadow: inset 0px -1px 7px 0px rgba(228, 91, 51, 0.75);
+    grid-template-rows: 80px;
+}
+
+header>.wrap {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: 1fr;
+    align-items: center
+}
+
+header li {
+    display: inline-block;
+}
+
+.logo {
+    padding-right: 6px;
+}
+
+.logo-txt {
+    font-size: 30px;
+    font-family: 'Chelsea Market', cursive;
+    color: rgb(255, 255, 255);
+    padding-right: 18px;
+}
+
+.slogan,
+header .wrap nav {
+    font-size: 14px;
+    font-family: "Telegrafico";
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.slogan {
+    padding-right: 175px;
+}
+
+header nav li {
+    padding-right: 16px;
+}
+
+header nav li:last-child {
+    padding-right: 11px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 12px;
+}
+
+header nav li::after,
+.footer-main a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    width: 0%;
+    background-color: #fff;
+    transition: width .3s ease-in-out;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+header nav li:hover::after {
+    width: 100%;
+}
+
+.cart-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #eb3b1c;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    box-shadow: 0px 2px 3px 0px rgba(255, 114, 74, 0.48), inset 0px 1px 0px 0px rgba(231, 167, 148, 0.69);
+    position: relative;
+}
+
+.cart-btn img {
+    padding-left: 8px;
+    padding-top: 9px;
+}
+
+.cart-counter {
+    width: 19px;
+    height: 19px;
+    font-size: 11px;
+    font-family: "Myriad Pro";
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #eb3b1c;
+    border-radius: 50%;
+    background-image: -moz-linear-gradient( 90deg, rgb(252, 42, 0) 0%, rgb(245, 72, 25) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(252, 42, 0) 0%, rgb(245, 72, 25) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(252, 42, 0) 0%, rgb(245, 72, 25) 100%);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 158, 119, 0.54);
+    padding: 2px 0px 0px 5px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.cart-btn:hover {
+    background-image: -webkit-radial-gradient(#f1f1f1, #929292);
+    box-shadow: 0px 1px 0px 0px rgba(251, 134, 107, 0.54), inset 0px 1px 1px 0px rgba(0, 0, 0, 0.39);
+}
+
+.navBar {
+    grid-area: navBar;
+    background-image: url(../images/bg-navBar.png);
+    background-repeat: round;
+    grid-template-rows: 70px;
+}
+
+#menu-mobile {
+    display: none;
+}
+
+.navBar>nav {
+    display: grid;
+    grid-template-columns: repeat(9, max-content);
+    align-self: stretch;
+}
+
+.navBar nav>li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.navBar nav>li>a {
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    font-family: "TerminalDosis";
+    color: rgb(125, 114, 83);
+    line-height: 70px;
+}
+
+.top_drop_down_active {
+    position: relative;
+    padding: 0 20px !important;
+}
+
+.top_drop_down_menu {
+    display: none;
+    background-color: rgb(251, 242, 211);
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    width: 169px;
+    position: absolute;
+    top: 69px;
+    left: 0px;
+}
+
+.top_drop_down_menu li {
+    width: 153px;
+    margin: 0 auto 16px auto;
+}
+
+.top_drop_down_menu a {
+    font-size: 14px !important;
+    padding-left: 13px;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    display: block;
+    font-family: "TerminalDosis";
+    color: rgb(125, 114, 83);
+    border-radius: 10px;
+    height: 20px;
+}
+
+.navBar nav>li:hover {
+    background-image: -moz-linear-gradient( 90deg, rgb(251, 242, 211) 0%, rgb(246, 235, 198) 68%, rgb(240, 228, 184) 99%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(251, 242, 211) 0%, rgb(246, 235, 198) 68%, rgb(240, 228, 184) 99%);
+    background-image: -ms-linear-gradient( 90deg, rgb(251, 242, 211) 0%, rgb(246, 235, 198) 68%, rgb(240, 228, 184) 99%);
+}
+
+.top_drop_down_menu a:hover {
+    color: #fff;
+    background: #f54922
+}
+
+.top_drop_down_active:hover .top_drop_down_menu {
+    display: block;
+}
+
+.infoSearch {
+    grid-area: infoSearch;
+    background-image: url(../images/bg-infoSearch.png);
+    grid-template-rows: 66px;
+}
+
+.infoSearch .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+}
+
+.infoSearch p {
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    font-style: italic;
+    letter-spacing: 0.3px;
+    color: rgb(167, 164, 156);
+    margin-right: 225px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.infoSearch,
+.social-icons {
+    line-height: 23px;
+}
+
+.infoSearch .currency {
+    margin-right: 12px;
+    width: 135px;
+}
+
+.currency select,
+.search-place {
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.13);
+    height: 25px;
+    padding-left: 12px;
+    border: none;
+    font-size: 12px;
+    font-family: "TerminalDosis";
+    color: rgb(76, 76, 76);
+    outline-color: #eb3b1c;
+}
+
+.currency select {
+    width: 135px;
+    margin-right: 12px;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-place {
+    width: 185px;
+}
+
+.infoSearch-search input::placeholder {
+    color: rgb(76, 76, 76);
+}
+
+.search-btn {
+    background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
+    cursor: pointer;
+    width: 15px;
+    border: none;
+    opacity: 0.5;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    outline: none;
+}
+
+.search-btn:hover {
+    opacity: 0.8;
+}
+
+.baner {
+    width: 100%;
+    margin-top: 20px;
+    grid-area: baner;
+    display: grid;
+    grid-template-rows: 355px 76px;
+    justify-items: center;
+}
+
+.baner-img {
+    height: max-content;
+}
+
+.baner-module {
+    height: 72px;
+    width: 940px;
+    background-image: url(../images/baner-img2.png);
+    display: grid;
+    grid-template-columns: 125px 1fr 106px;
+    align-items: center;
+    justify-items: end;
+}
+
+.slide-selection {
+    justify-self: center;
+}
+
+.slide-selection input {
+    display: none;
+}
+
+.slide-selection label {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.slide-selection label::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 2px;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.slide-selection input:checked+label::before {
+    background: #fff;
+}
+
+.baner-module p {
+    font-size: 16px;
+    font-family: "TerminalDosis";
+    color: rgb(255, 255, 255);
+    line-height: 32px;
+    margin-right: 12px;
+}
+
+.baner-module-btn {
+    border: 1px solid #76c2bf;
+    border-radius: 3px;
+    background-image: -moz-linear-gradient( 90deg, rgb(140, 199, 197) 0%, rgb(159, 220, 218) 86%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(140, 199, 197) 0%, rgb(159, 220, 218) 86%);
+    background-image: -ms-linear-gradient( 90deg, rgb(140, 199, 197) 0%, rgb(159, 220, 218) 86%);
+    box-shadow: 0px 2px 3px 0px rgba(155, 215, 213, 0.48), inset 0px 1px 0px 0px rgba(155, 215, 213, 0.53);
+    width: 80px;
+    height: 32px;
+    margin-right: 25px;
+}
+
+.baner-module-btn a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Telegrafico";
+    color: rgb(255, 255, 255);
+    line-height: 28px;
+    text-align: center;
+    text-shadow: -0.707px -0.707px 0px rgba(136, 209, 207, 0.77);
+}
+
+.baner-module-btn:hover {
+    border: 1px solid #e46e4b;
+    border-radius: 3px;
+    background-image: -moz-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    background-image: -ms-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    box-shadow: 0px 0px 3px 0px #e46e4b 0%, #d3d6db 86%;
+}
+
+main {
+    grid-area: main;
+    width: 940px;
+    grid-template-rows: repeat(7, max-content);
+    justify-items: center;
+}
+
+.line {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 100px;
+}
+
+.line p {
+    font-size: 18px;
+    font-family: "Telegrafico";
+    color: rgb(116, 114, 114);
+    line-height: 95px;
+    text-align: left;
+}
+
+.line-img {
+    background-image: url(../images/ruler.png);
+    background-repeat: repeat-x;
+    place-self: stretch;
+    background-position: center;
+}
+
+.featured,
+.latest {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+}
+
+.latest {
+    position: relative;
+}
+
+.arrow-left {
+    position: absolute;
+    top: 110px;
+    left: -35px;
+}
+
+.arrow-right {
+    position: absolute;
+    top: 110px;
+    right: -35px;
+}
+
+.product-card {
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    width: 220px;
+    height: 267px;
+    background-image: -webkit-linear-gradient( 90deg, #d5d5d5 46%, #f2f2f2 100%);
+    box-shadow: inset 0px 2px 1px 0px rgba(255, 255, 255, 0.58);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 187px 30px 1fr;
+}
+
+.product_img {
+    width: 207px;
+    height: 175px;
+    margin: 6px 6px 0 6px;
+    grid-column: 1/3;
+    position: relative;
+    overflow: hidden;
+}
+
+.product_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.img_btn {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    width: 206px;
+    /* height: 175px; */
+    background: rgba(0, 0, 0, 0.6);
+    display: grid;
+    grid-template-rows: max-content max-content;
+    align-content: center;
+    justify-content: center;
+    grid-row-gap: 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in-out;
+    transform: translateX(100%);
+}
+
+.img_btn a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(73, 73, 73);
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.44);
+}
+
+.img_btn .hiden_btn {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(91, 91, 91);
+    border-radius: 3px;
+    background-image: -moz-linear-gradient( 90deg, rgb(206, 206, 206) 1%, rgb(220, 220, 220) 46%, rgb(234, 234, 234) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(206, 206, 206) 1%, rgb(220, 220, 220) 46%, rgb(234, 234, 234) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(206, 206, 206) 1%, rgb(220, 220, 220) 46%, rgb(234, 234, 234) 100%);
+    width: 135px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.hiden_btn:hover {
+    border-color: #e46e4b;
+    background-image: -webkit-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+}
+
+.hiden_btn:hover a {
+    color: white;
+}
+
+.product_img:hover .img_btn {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-card h3 {
+    font-size: 16px;
+    font-family: "TerminalDosis";
+    color: rgb(73, 73, 73);
+    line-height: 1.75;
+    text-align: left;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.44);
+    margin-left: 6px;
+    grid-column: 1/3;
+}
+
+
+/* .featured .wrap {
+    height: 51px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: end;
+} */
+
+.addToCart {
+    border: 1px solid #e46e4b;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    box-shadow: 0px 0px 3px 0px #e46e4b 0%, #d3d6db 86%;
+    width: 109px;
+    height: 28px;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    align-self: end;
+}
+
+.addToCart a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: 0.5px 0.866px 0px rgba(0, 0, 0, 0.18);
+    letter-spacing: 0.3px;
+    line-height: 25px;
+}
+
+.addToCart:hover {
+    border: 1px solid #929292;
+    background-image: -webkit-radial-gradient(#f1f1f1, #929292);
+    /* box-shadow: 0px 1px 0px 0px rgba(251, 134, 107, 0.54), inset 0px 1px 1px 0px rgba(0, 0, 0, 0.39); */
+}
+
+.addToCart:hover a {
+    color: black;
+}
+
+.product_card_price {
+    place-self: end;
+    margin-right: 6px;
+    margin-bottom: 7px;
+}
+
+.product_card_price table {
+    text-align: center;
+    border: 1px solid rgb(91, 91, 91);
+}
+
+.product_card_price table td {
+    border: 1px solid rgb(91, 91, 91);
+    background: -webkit-linear-gradient( 90deg, rgb(206, 206, 206) 1%, rgb(220, 220, 220) 46%, rgb(234, 234, 234) 100%);
+    opacity: 0.79;
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.48);
+    width: 19px;
+    height: 26px;
+    font-size: 18px;
+    font-family: "TerminalDosis";
+    color: rgb(99, 99, 99);
+    font-weight: bold;
+    text-shadow: 0.5px 0.866px 0px rgba(255, 255, 255, 0.15);
+}
+
+.product_card_price table td:first-child {
+    background-image: -webkit-linear-gradient( 90deg, rgb(68, 68, 68) 0%, rgb(100, 100, 100) 99%);
+    color: rgb(255, 255, 255);
+}
+
+.brands {
+    height: 70px;
+    display: grid;
+    grid-template-columns: max-content repeat(4, 1fr) max-content;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.more-items {
+    display: grid;
+    grid-template-columns: repeat(7, max-content);
+    grid-column-gap: 8px;
+    margin-top: 40px;
+}
+
+.item {
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient( 90deg, rgb(206, 206, 206) 0%, rgb(217, 217, 217) 87%);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.34);
+    width: 31px;
+    height: 29px;
+    text-align: center;
+    line-height: 27px;
+}
+
+.item a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(84, 84, 84);
+    text-shadow: 0.5px 0.866px 0px rgba(255, 255, 255, 0.55);
+}
+
+.item:hover {
+    border: 1px solid #e46e4b;
+    background-image: -webkit-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    box-shadow: 0px 0px 3px 0px #e46e4b 0%, #d3d6db 86%;
+}
+
+.item a:hover {
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(255, 255, 255);
+    text-shadow: 0.5px 0.866px 0px rgba(0, 0, 0, 0.18);
+    font-weight: bold;
+}
+
+footer {
+    width: 100%;
+    margin-top: 195px;
+    grid-area: footer;
+    display: grid;
+    grid-template-rows: 145px 250px 70px;
+}
+
+.footer-top,
+.footer-main,
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 940px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-top {
+    background-image: url(../images/bg-footer-top.png);
+}
+
+.footer-top .wrap {
+    display: grid;
+    grid-template-columns: min-content 270px min-content 270px min-content 270px;
+    grid-column-gap: 14px;
+}
+
+.footer-top_txt h3 {
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    font-family: "Telegrafico";
+    color: rgb(116, 114, 114);
+}
+
+.footer-top_txt p {
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(125, 114, 83);
+    letter-spacing: 0.3px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+
+.footer-main {
+    background-image: url(../images/bg-foote-main.png);
+    background-repeat: round;
+    border-bottom: 5px solid #5c5c5c;
+}
+
+.footer-main .wrap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(5, max-content);
+    grid-row-gap: 6px;
+}
+
+.footer-main h3 {
+    font-size: 18px;
+    font-family: "Telegrafico";
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.3px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.footer-main p {
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(201, 201, 201);
+    line-height: 24px;
+}
+
+.footer-main a {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(201, 201, 201);
+}
+
+.ft-about-us {
+    margin-right: 25px;
+}
+
+.footer-main a:hover::after {
+    width: 100%;
+}
+
+.footer-bottom {
+    background-image: url(../images/bg-footer-bottom.png);
+    border-bottom: 2px solid #636363;
+}
+
+.footer-bottom .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.powered-by,
+.copyright {
+    font-size: 14px;
+    font-family: "Telegrafico";
+    color: rgb(132, 132, 132);
+}
+
+.copyright span {
+    font-weight: 600;
+}
+
+.powered-by {
+    justify-self: end;
+}
+
+header input {
+    display: none;
+}
+
+header input:checked+nav li {
+    display: block;
+}
+
+.navBar>input {
+    display: none;
+}
+
+.navBar>input:checked+.top-menu li {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    body {
+        grid-template-areas: "header" "navBar" "infoSearch" "baner" "main" "footer ";
+        grid-template-rows: repeat(6, auto);
+    }
+    header,
+    .navBar,
+    .infoSearch {
+        grid-template-columns: auto;
+    }
+    .slogan {
+        display: none;
+    }
+    .navBar {
+        grid-template-rows: minmax(70px, auto);
+    }
+    header nav li {
+        display: none;
+    }
+    header input {
+        display: block;
+    }
+    .navBar>input {
+        display: block;
+    }
+    .navBar nav {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(9, max-content);
+    }
+    .top-menu li {
+        display: none;
+    }
+    .infoSearch .wrap {
+        grid-template-columns: repeat(4, max-content);
+        grid-template-rows: repeat(2, max-content);
+    }
+    .infoSearch p {
+        margin: 0 10px 0 0;
+        grid-column: 1/4;
+    }
+    .infoSearch .search-form {
+        margin: 0;
+        grid-column: 3/5;
+    }
+    .search-btn {
+        right: 6px;
+    }
+    .baner {
+        grid-template-rows: auto auto;
+    }
+    .baner-img {
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: center;
+    }
+    .baner-module,
+    .baner-img img {
+        width: 100%;
+    }
+    .baner-module p {
+        text-align: center;
+        line-height: 20px;
+    }
+    main {
+        width: auto;
+        grid-template-rows: repeat(7, auto);
+    }
+    .featured,
+    .latest {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+    .latest .arrow-left,
+    .latest .arrow-right {
+        display: none;
+    }
+    footer {
+        grid-template-rows: repeat(3, auto);
+        margin-top: 100px;
+        /* width: 80%; */
+    }
+    .footer-top,
+    .footer-main,
+    .footer-bottom {
+        grid-template-columns: 100%;
+    }
+    .footer-top .wrap {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        height: 425px;
+    }
+    .footer-top_img {
+        margin-left: 15px;
+    }
+    .footer-top_txt {
+        margin-right: 15px;
+    }
+    .footer-main .wrap {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, max-content);
+        justify-items: center;
+        grid-gap: 20px;
+        margin-bottom: 5px;
+    }
+    .ft-about-us {
+        text-align: center;
+        grid-column: 1/3;
+        margin: 20px 10px 0px;
+    }
+    .footer-main a {
+        text-align: center;
+    }
+    .ft-information,
+    .ft-my-account {
+        justify-self: end;
+    }
+    .ft-customer-service,
+    .ft-extras {
+        justify-self: start;
+    }
+    .ft-information a,
+    .ft-my-account a {
+        text-align: right;
+    }
+    .ft-customer-service a,
+    .ft-extras a {
+        text-align: left;
+    }
+    .footer-bottom .wrap {
+        font-size: 10px;
+        grid-template-rows: 30px;
+        align-items: center;
+    }
+    .powered-by,
+    .copyright {
+        font-size: 10px;
+    }
+}

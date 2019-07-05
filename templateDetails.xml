@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="template" client="site">
+ <name>MyCustomTemplate</name>
+ <creationDate>Июнь 2019</creationDate>
+ <author>MyCustomTemplateSite</author>
+ <authorEmail>info@MyCustomTemplateSite.ua</authorEmail>
+ <authorUrl>http://MyCustomTemplateSite.ua</authorUrl>
+ <copyright>Некая информация об авторских правах (С)</copyright>
+ <license>Лицензионная информация, по которой будет распространяться данный шаблон</license>
+ <version>1.0.0</version>
+ <description>Самостоятельно созданный шаблон для сайта MyCustomTemplateSite.ua</description>
+ <files>
+  <filename>index.php</filename>
+  <filename>templateDetails.xml</filename>
+  <filename>template_preview.png</filename>
+  <filename>template_thumbnail.png</filename>
+  <filename>favicon.ico</filename>
+  <folder>css</folder>
+  <folder>html</folder>
+  <folder>images</folder>
+  <folder>js</folder>
+  <folder>language</folder>
+ </files>
+ <positions>
+  <position>position-0</position>
+  <position>position-1</position>
+  <position>position-2</position>
+  <position>position-3</position>
+  <position>position-4</position>
+  <position>position-5</position>
+ </positions>
+</extension>

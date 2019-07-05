@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+    font-family: Telegrafico;
+    /* Имя шрифта */
+    src: url(/templates/mycustomtemplate/fonts/telegrafico.ttf);
+    /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: TerminalDosis;
+    /* Имя шрифта */
+    src: url(/templates/mycustomtemplate/fonts/TerminalDosis-Book.ttf);
+    /* Путь к файлу со шрифтом */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    height: 210px;
+}
+
+.hd-top {
+    background-image: -moz-linear-gradient( 90deg, rgb(244, 70, 32) 0%, rgb(248, 84, 43) 44%, rgb(252, 98, 54) 70%, rgb(251, 94, 49) 81%, rgb(250, 89, 43) 97%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(244, 70, 32) 0%, rgb(248, 84, 43) 44%, rgb(252, 98, 54) 70%, rgb(251, 94, 49) 81%, rgb(250, 89, 43) 97%);
+    background-image: -ms-linear-gradient( 90deg, rgb(244, 70, 32) 0%, rgb(248, 84, 43) 44%, rgb(252, 98, 54) 70%, rgb(251, 94, 49) 81%, rgb(250, 89, 43) 97%);
+    box-shadow: inset 0px -1px 7px 0px rgba(228, 91, 51, 0.75);
+    height: 80px;
+}
+
+.hd-top-container {
+    width: 960px;
+    height: 79px;
+    display: flex;
+    align-items: stretch;
+    margin: 0 auto;
+    color: white;
+}
+
+.logo-img,
+.logo-txt,
+.logo-slogan {
+    align-self: center;
+}
+
+.logo-img img {
+    width: 31px;
+    height: 41px;
+}
+
+.logo-txt {
+    font-family: 'Chelsea Market', cursive;
+    font-size: 30px;
+    margin-left: 7px;
+    align-self: stretch;
+    line-height: 2.5;
+}
+
+.logo-slogan {
+    margin-left: 19px;
+    align-self: stretch;
+    line-height: 6;
+}
+
+.logo-slogan p {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Telegrafico';
+}
+
+.hd-user-menu {
+    display: inline-flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 170px;
+}
+
+.hd-user-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 0 8px;
+    text-transform: uppercase;
+    font-family: 'Telegrafico';
+    font-size: 14px;
+    display: block;
+}
+
+.hd-user-menu a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.hd-cart-btn {
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn {
+    border-radius: 3px;
+    background-image: -moz-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    background-image: -ms-linear-gradient( 90deg, rgb(232, 70, 33) 0%, rgb(253, 95, 55) 86%);
+    box-shadow: 0 0 2px 1px #a73702;
+    width: 33px;
+    height: 33px;
+    position: absolute;
+}
+
+.cart-btn img {
+    padding: 9px;
+}
+
+.cart-counter {
+    border-radius: 50%;
+    background-image: -moz-linear-gradient( 90deg, rgb(252, 42, 0) 0%, rgb(245, 72, 25) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(252, 42, 0) 0%, rgb(245, 72, 25) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(252, 42, 0) 0%, rgb(245, 72, 25) 100%);
+    box-shadow: 0 0 2px 1px #a73702;
+    width: 18px;
+    height: 17px;
+    position: relative;
+    top: -15px;
+    left: 23px;
+}
+
+.cart-counter p {
+    text-align: center;
+    font-size: 11px;
+    padding-top: 1px;
+}
+
+.hd-main {
+    background-color: rgb(251, 242, 211);
+    box-shadow: 0px 5px 0px 0px rgba(241, 233, 207, 0.004);
+    height: 70px;
+    border-bottom: 5px solid #eee6cd;
+    background-image: url("/templates/mycustomtemplate/images/nav2texture.png");
+    background-repeat: space;
+}
+
+.hd-main-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    height: 70px;
+}
+
+.hd-main-menu a {
+    /* display: block; */
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "TerminalDosis";
+    color: rgb(125, 114, 83);
+}
+
+.hd-main-menu>li {
+    list-style: none;
+    margin: 0px 20px;
+    line-height: 4;
+}
+
+.hd-main-menu>li>a:hover {
+    border-bottom: 3px solid #fff;
+    transition: .2s;
+    transform: translateX(-50%);
+}
+
+
+/* .hd-main-menu>li>a {
+    position: relative;
+}
+
+.hd-main-menu>li>a:after {
+    background-color: #fff;
+    display: block;
+    content: "";
+    height: 5px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    transition: .3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.hd-main-menu>li>a:hover:after,
+.hd-main-menu>li>a:focus:after {
+    width: 100%
+} */
+
+.hd-main-menu>li:nth-child(2) {
+    margin: 0 !important;
+}
+
+.HomeIcon:first-child {
+    margin-right: 12px;
+    position: relative;
+    margin: 0 12px 0 0 !important;
+}
+
+.hd-main-menu li a img {
+    position: absolute;
+    right: 6px;
+    top: 23px;
+}
+
+.hd-drop-down-active {
+    position: relative;
+    padding: 0px 20.5px;
+    margin: 0px 0 0 20px !important;
+}
+
+.hd-drop-down-menu {
+    display: none;
+    flex-direction: column;
+    width: 170px;
+    height: 225px;
+    background: #fbf2d3;
+    padding: 0;
+    position: absolute;
+    top: 62px;
+    left: 0px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.hd-drop-down-menu li {
+    list-style: none;
+    width: 153px;
+    height: 20px;
+    border-radius: 20px;
+    margin: 15px auto 0 auto;
+    padding-left: 15px;
+    line-height: normal;
+}
+
+.hd-drop-down-menu li a {
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(119, 119, 119);
+}
+
+.hd-drop-down-active:hover {
+    background: #fbf2d3;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.hd-drop-down-active:hover .hd-drop-down-menu {
+    display: flex;
+}
+
+.hd-drop-down-menu li:hover {
+    background-color: rgb(245, 73, 34);
+}
+
+.hd-drop-down-menu li:hover a {
+    color: #fff;
+}
+
+.hd-footer {
+    height: 67px;
+    border-bottom: 5px solid #f2f2f2;
+    background-image: -moz-linear-gradient( 90deg, rgb(249, 246, 242) 0%, rgb(249, 246, 242) 37%, rgb(248, 245, 241) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(249, 246, 242) 0%, rgb(249, 246, 242) 37%, rgb(248, 245, 241) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(249, 246, 242) 0%, rgb(249, 246, 242) 37%, rgb(248, 245, 241) 100%);
+}
+
+.hd-footer-wrap {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+}
+
+.hd-footer-content {
+    justify-self: flex-start;
+}
+
+.hd-footer-content p {
+    font-size: 14px;
+    font-family: "TerminalDosis";
+    color: rgb(167, 164, 156);
+    margin: 0;
+}
+
+.socnetwork-icon {
+    justify-self: end;
+}
+
+.currency-selection {
+    margin: 0 12px;
+}
+
+.currency-selection select {
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.13);
+    width: 136px;
+    height: 27px;
+    border: none;
+    font-size: 12px;
+    font-family: "TerminalDosis";
+    color: rgb(76, 76, 76);
+    line-height: 2;
+    text-align: left;
+    outline: none;
+    padding-left: 10px;
+}
+
+.currency-selection option {
+    padding: 0;
+}
+
+.search-field input {
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.13);
+    width: 136px;
+    height: 27px;
+    border: none;
+    font-size: 12px;
+    font-family: "TerminalDosis";
+    color: rgb(76, 76, 76);
+    line-height: 2;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#content {}
+
+#baner {
+    display: grid;
+    grid-template-rows: 355px 72px;
+    justify-content: center;
+    align-content: end;
+    /* width: 940px;
+    height: 430px; */
+}
+
+.baner-bottom {
+    background-image: url(/templates/mycustomtemplate/images/baner-img2.png);
+}
+
+.baner-bottom-txt {
+    text-align: right;
+    line-height: 5;
+    font-size: 16px;
+    font-family: "TerminalDosis";
+    color: rgb(255, 255, 255);
+}
+
+#featured {
+    height: 320px;
+}
+
+#brands {
+    height: 120px;
+}
+
+#latest {
+    height: 400px;
+}
+
+#footer {
+    height: 460px;
+}
