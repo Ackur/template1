@@ -101,6 +101,10 @@ header nav a {
     line-height: 12px;
 }
 
+header nav li img {
+    display: none;
+}
+
 header nav li::after,
 .footer-main a::after {
     content: '';
@@ -122,6 +126,10 @@ header nav li:hover::after {
     display: none;
 }
 
+.user-menu-arrows {
+    display: none;
+}
+
 #user_menu-label {
     display: none;
     border: 1px solid #eb3b1c;
@@ -130,7 +138,6 @@ header nav li:hover::after {
     box-shadow: 0px 2px 3px 0px rgba(255, 114, 74, 0.48), inset 0px 1px 0px 0px rgba(231, 167, 148, 0.69);
     width: 34px;
     height: 34px;
-    margin-right: 6px;
 }
 
 #user_menu-label img {
@@ -139,13 +146,7 @@ header nav li:hover::after {
 }
 
 #user_menu-label:hover {
-    background-image: -webkit-radial-gradient(#f1f1f1, #929292);
-    box-shadow: 0px 1px 0px 0px rgba(251, 134, 107, 0.54), inset 0px 1px 1px 0px rgba(0, 0, 0, 0.39);
-}
-
-#user_menu-label::before {
-    content: "";
-    background: yellowgreen;
+    box-shadow: 0px 2px 3px 0px rgba(255, 114, 74, 0.48), inset 0px 1px 20px 0px rgba(231, 167, 148, 0.69);
 }
 
 #user_menu-label {
@@ -202,6 +203,18 @@ header nav li:hover::after {
 #main-menu-checker,
 .top-menu label {
     display: none;
+}
+
+#main-menu-checker+nav label span {
+    /* border: 1px solid grey; */
+    padding: 8px 18px;
+    border-radius: 25px;
+    text-shadow: -1px 1px 0px #00000059;
+    box-shadow: 0px 3px 9px 3px rgba(255, 114, 74, 0.48), inset 0px 3px 4px 0px rgba(231, 167, 148, 0.69);
+}
+
+#main-menu-checker:checked+nav label span {
+    box-shadow: 0px 3px 9px 3px rgba(184, 184, 184, 0.48), inset 0px 3px 4px 0px rgba(80, 80, 80, 0.69);
 }
 
 .navBar>nav {
@@ -827,7 +840,16 @@ header input {
 }
 
 header input:checked+nav li {
+    display: inline-block;
+}
+
+header input:checked+nav label+span {
     display: block;
+}
+
+#user-menu:checked+nav label {
+    background-image: -webkit-radial-gradient(#f1f1f1, #929292);
+    box-shadow: 0px 1px 0px 0px rgba(251, 134, 107, 0.54), inset 0px 1px 1px 0px rgba(0, 0, 0, 0.39);
 }
 
 .navBar>input {
@@ -849,7 +871,10 @@ header input:checked+nav li {
     }
     .user-menu {
         display: grid;
-        grid-template-columns: repeat(5, max-content);
+        grid-template-columns: repeat(6, max-content);
+    }
+    .cart-btn {
+        margin-left: 7px;
     }
     .navBar,
     .infoSearch {
@@ -861,10 +886,8 @@ header input:checked+nav li {
     .user-menu li a span {
         display: none;
     }
-    .user-menu li a {
+    .user-menu-arrows {
         line-height: 32px;
-        font-size: 17px;
-        margin-left: 9px;
     }
     #user_menu-label {
         display: inline-block;
@@ -882,9 +905,20 @@ header input:checked+nav li {
         height: 34px;
         padding: 0;
     }
+    header nav li span {
+        display: none;
+    }
+    header nav li img {
+        display: inline-block;
+        width: 17px;
+        margin-top: 7px;
+        margin-left: 7px;
+    }
     header nav li:last-child {
-        margin-right: 10px;
         padding: 0;
+    }
+    header nav li:hover {
+        box-shadow: 0px 2px 3px 0px rgba(255, 114, 74, 0.48), inset 0px 1px 20px 0px rgba(231, 167, 148, 0.69);
     }
     header nav a {
         font-size: 6px;
@@ -923,9 +957,6 @@ header input:checked+nav li {
         font-family: "TerminalDosis";
         color: #e84c28;
         font-size: 20px;
-    }
-    .top-menu label:hover span {
-        color: white;
     }
     .infoSearch {
         justify-items: center;
@@ -1035,5 +1066,11 @@ header input:checked+nav li {
     .powered-by,
     .copyright {
         font-size: 10px;
+    }
+}
+
+@media (mix-width: 601px) {
+    .user-menu-arrows {
+        display: none;
     }
 }
